@@ -4,13 +4,19 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     line-height: 1.6;
+    margin-top: 170px;
 }
 
 header {
     background: #333;
     color: white;
     text-align: center;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    z-index: 1000;
+    border-radius: 0;
 }
 
 header h1 {
