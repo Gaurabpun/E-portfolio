@@ -1,20 +1,85 @@
-// Display current year in the footer
+window.onload = function () {
+    // Display current year in the footer
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-// Scroll to Top Button functionality
-const scrollTopBtn = document.getElementById("scrollTopBtn");
+// === Chatbot ===
+const chatbotBtn = document.getElementById('chatbot-btn');
+const chatbotWindow = document.getElementById('chatbot-window');
+const chatMessages = document.getElementById('chatbot-messages');
+const chatInput = document.getElementById('chat-input');
 
-// When the user scrolls down 100px from the top of the document, show the button
-window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollTopBtn.style.display = "block";
-    } else {
-        scrollTopBtn.style.display = "none";
-    }
+const SYSTEM_PROMPT = `
+You are an AI assistant for Gaurab Pun's portfolio website.
+Use this information to answer questions:
+
+About:
+Hi, I'm Gaurab Pun, a passionate Computer Science student. I'm interested in software development, web technologies, and AI. I'm continuously looking for opportunities to enhance my skills and work on exciting projects!
+
+Projects:
+1. Web Development – A responsive website using HTML, CSS, and JavaScript. Showcases my understanding of front-end development and design.
+2. AI Chatbot – A simple AI chatbot using Python and machine learning libraries, focusing on NLP and user interaction.
+
+Contact:
+Email: gaurab.pun24@gmail.com
+GitHub and LinkedIn links are available on the website.
+`;
+
+chatbotBtn.onclick = () => {
+  chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
 };
 
-// When the user clicks on the button, scroll to the top of the document
-scrollTopBtn.addEventListener("click", function () {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+async function sendMessage() {
+  const userMessage = chatInput.value.trim();
+  if (!userMessage) return;
+
+  addMessage(userMessage, 'user');
+  chatInput.value = '';
+  addMessage('Typing...', 'bot');
+
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        { role: "user", content: userMessage },
+      ],
+    }),
+  });
+
+  const data = await response.json();
+  const botReply = data.choices?.[0]?.message?.content || "Sorry, something went wrong.";
+  removeLastBotMessage();
+  addMessage(botReply, 'bot');
+}
+
+function addMessage(text, sender) {
+  const msg = document.createElement('div');
+  msg.className = `message ${sender}`;
+  msg.textContent = text;
+  chatMessages.appendChild(msg);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function removeLastBotMessage() {
+  const messages = chatMessages.querySelectorAll('.message.bot');
+  if (messages.length > 0) {
+    messages[messages.length - 1].remove();
+  }
+}
+
+const sendBtn = document.getElementById('chat-send-btn');
+sendBtn.addEventListener('click', sendMessage);
+
+// Optional: Send on "Enter" key press
+chatInput.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    sendMessage();
+  }
 });
+
+};

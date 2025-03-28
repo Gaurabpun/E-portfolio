@@ -6,6 +6,7 @@
     <title>My e-portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Gaurab's E-Portfolio</h1>
@@ -42,8 +43,22 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Gaurab Pun. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Gaurab Pun. All rights reserved.</p>
     </footer>
+
+    <!-- Chatbot Button -->
+<button id="chatbot-btn">💬</button>
+
+<!-- Chatbot Window -->
+<div id="chatbot-window">
+  <div id="chatbot-messages"></div>
+  <div id="chatbot-input">
+    <input type="text" id="chat-input" placeholder="Ask me anything..." />
+    <button id="chat-send-btn">➤</button>
+  </div>
+</div>
+
+<script src="script.js"></script> <!-- make sure this line is here or add it -->
 
 </body>
 </html>

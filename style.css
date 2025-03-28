@@ -93,3 +93,75 @@ footer {
 footer p {
     font-size: 1rem;
 }
+
+/* === Chatbot Styles === */
+#chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 999;
+  }
+  
+  #chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 998;
+  }
+  
+  #chatbot-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 14px;
+  }
+  
+  #chatbot-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+  }
+  
+  #chatbot-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  #chatbot-input button {
+    background: #1e40af;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .message.user {
+    text-align: right;
+    color: #1e40af;
+    margin: 5px 0;
+  }
+  
+  .message.bot {
+    text-align: left;
+    color: #111827;
+    margin: 5px 0;
+  }  
