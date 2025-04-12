@@ -21,6 +21,7 @@
 
     <section id="about">
         <h2>About Me</h2>
+        <img src="images/profilePic1.jpeg" alt="Gaurab Pun" class="profile-pic">
         <p>Hi, I'm Gaurab Pun, a passionate Computer Science student. I'm interested in software development, web technologies, and AI. I'm continuously looking for opportunities to enhance my skills and work on exciting projects!</p>
     </section>
 
@@ -29,10 +30,19 @@
         <div class="project">
             <h3>Project 1: Web Development</h3>
             <p>This project involved creating a responsive website using HTML, CSS, and JavaScript. It showcases my understanding of front-end development and design principles.</p>
+            <a href="javascript:void(0);" onclick="toggleDetails('project1-details')">Learn more</a>
+            <div id="project1-details" class="project-details" style="display: none;">
+                <p>Extra info: This included features like responsive layout, interactive elements, and animations using CSS trsansitions.</p>
+            </div>
+            <!-- <a href="project1.html" target="_blank">Learn more</a>-->
         </div>
         <div class="project">
             <h3>Project 2: AI Chatbot</h3>
             <p>In this project, I built a simple AI chatbot using Python and machine learning libraries, focusing on natural language processing and user interaction.</p>
+            <a href="javascript:void(0);" onclick="toggleDetails('project2-details')">Learn more</a>
+            <div id="project2-details" class="project-details" style="display: none;">
+                <p>Extra info: Used NLTK for tokenization, trained a bsic classifier, and added basic conversational logic.</p>
+            </div>
         </div>
     </section>
 
@@ -58,7 +68,7 @@
   </div>
 </div>
 
-<script src="script.js"></script> <!-- make sure this line is here or add it -->
+<script src="script.js" defer></script> <!-- make sure this line is here or add it -->
 
 </body>
 </html>

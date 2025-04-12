@@ -1,5 +1,4 @@
-window.onload = function () {
-    // Display current year in the footer
+// Display current year in the footer
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 
 // === Chatbot ===
@@ -82,4 +81,30 @@ chatInput.addEventListener('keypress', function (e) {
   }
 });
 
-};
+document.addEventListener("scroll", function() {
+  var header = document.querySelector("header");
+  if (window.pageYOffset > 50) { // Checks if the page is scrolled down 100 pixels or more
+      header.classList.add("minimized");
+  } else {
+      header.classList.remove("minimized");
+  }
+});
+
+function toggleDetails(id) {
+  const element = document.getElementById(id);
+  if (element.style.display === "none" || element.style.display === "") {
+      element.style.display = "block";
+  } else {
+      element.style.display = "none";
+  }
+}
+
+// scroll header shrink
+document.addEventListener("scroll", function () {
+  const header = document.querySelector("header");
+  if (window.pageYOffset > 50) {
+    header.classList.add("minimized");
+  } else {
+    header.classList.remove("minimized");
+  }
+});
