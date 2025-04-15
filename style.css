@@ -54,8 +54,8 @@ nav a:hover {
     color: #f4b400; /* Golden color on hover */
 }
 
-#about, #projects, #contact, #skills {
-    scroll-margin-top: 100px;
+#about.fade-in, #projects.fade-in, #contact.fade-in, #skills.fade-in {
+    scroll-margin-top: 130px;
 }
 
 section {
@@ -286,4 +286,15 @@ footer p {
 .contact-icons p {
     margin: 0;
     font-size: 0.95rem;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
