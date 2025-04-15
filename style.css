@@ -7,6 +7,10 @@ body {
     margin-top: 170px;
 }
 
+html {
+    scroll-behavior: smooth;
+  }  
+
 header {
     background: #333;
     color: white;
@@ -50,6 +54,10 @@ nav a:hover {
     color: #f4b400; /* Golden color on hover */
 }
 
+#about, #projects, #contact, #skills {
+    scroll-margin-top: 100px;
+}
+
 section {
     padding: 2rem;
     text-align: center;
@@ -75,11 +83,51 @@ section p {
     margin: 20px 0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
 }
 
 .project:hover {
+    transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.project a {
+    color: #007BFF; /* Example: blue color for the link */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes font bold */
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s, color 0.3s, padding 0.2s;
+}
+
+.project a:hover {
+    text-decoration: underline; /* Adds underline on hover for better usability */
+}
+
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.3s ease;
+    background-color: #f9f9f9;
+    padding: 0 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.project-details.open {
+    max-height: 300px;
+    padding: 1rem;
+}
+
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project h3 {
@@ -171,29 +219,71 @@ footer p {
     margin: 5px 0;
   }
 
-  .project a {
-    color: #007BFF; /* Example: blue color for the link */
-    text-decoration: none; /* Removes underline */
-    font-weight: bold; /* Makes font bold */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 1.5rem;
 }
 
-.project a:hover {
-    text-decoration: underline; /* Adds underline on hover for better usability */
+.skill {
+    text-align: center;
 }
 
-.project-details {
-    margin-top: 1rem;
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border-left: 4px solid #333;
-    border-radius: 5px;
+.skill img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
 }
 
-.profile-pic {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.skill:hover img {
+    transform: scale(1.1);
+}
+
+.skill p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 1.5rem;
+}
+
+.contact-icons a {
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    transition: transform 0.3s;
+
+    width: 60px;
+}
+
+.contact-icons img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    transition: transform 0.3s;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.contact-icons p {
+    margin: 0;
+    font-size: 0.95rem;
 }
