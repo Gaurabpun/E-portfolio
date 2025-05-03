@@ -114,10 +114,11 @@ section p {
     padding: 0 1rem;
     border-radius: 5px;
     margin-top: 1rem;
+    text-align: left;
 }
 
 .project-details.open {
-    max-height: 300px;
+    max-height: 800px;
     padding: 1rem;
 }
 
