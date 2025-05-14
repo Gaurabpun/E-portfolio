@@ -1,0 +1,301 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    margin-top: 170px;
+}
+
+html {
+    scroll-behavior: smooth;
+  }  
+
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    transition: padding 0.3s ease;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+header.minimized {
+    padding: 0.2rem 0;
+}
+
+header h1 {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f4b400; /* Golden color on hover */
+}
+
+#about.fade-in, #projects.fade-in, #contact.fade-in, #skills.fade-in {
+    scroll-margin-top: 130px;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.project {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.project a {
+    color: #007BFF; /* Example: blue color for the link */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes font bold */
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s, color 0.3s, padding 0.2s;
+}
+
+.project a:hover {
+    text-decoration: underline; /* Adds underline on hover for better usability */
+}
+
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.3s ease;
+    background-color: #f9f9f9;
+    padding: 0 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.project-details.open {
+    max-height: 800px;
+    padding: 1rem;
+}
+
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* === Chatbot Styles === */
+#chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 999;
+  }
+  
+  #chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 998;
+  }
+  
+  #chatbot-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 14px;
+  }
+  
+  #chatbot-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+  }
+  
+  #chatbot-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  #chatbot-input button {
+    background: #1e40af;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .message.user {
+    text-align: right;
+    color: #1e40af;
+    margin: 5px 0;
+  }
+  
+  .message.bot {
+    text-align: left;
+    color: #111827;
+    margin: 5px 0;
+  }
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.skill {
+    text-align: center;
+}
+
+.skill img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.skill:hover img {
+    transform: scale(1.1);
+}
+
+.skill p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 1.5rem;
+}
+
+.contact-icons a {
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    transition: transform 0.3s;
+
+    width: 60px;
+}
+
+.contact-icons img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    transition: transform 0.3s;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.contact-icons p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My e-portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    
+   <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SV9448QK9"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-0SV9448QK9');
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Gaurab's E-Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <img src="images/profile/profilePic1.jpeg" alt="Gaurab Pun" class="profile-pic">
+        <p>Hi, I'm Gaurab Pun, a passionate Computer Science student. I'm interested in software development, web technologies, and AI. I'm continuously looking for opportunities to enhance my skills and work on exciting projects!</p>
+    </section>
+
+    <section id="skills" class="fade-in">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill">
+                <img src="images/skills/html.png" alt="HTML">
+                <p>HTML</p>
+            </div>
+            <div class="skill">
+                <img src="images/skills/css.png" alt="CSS">
+                <p>CSS</p>
+            </div>
+            <div class="skill">
+                <img src="images/skills/java.png" alt="Java">
+                <p>Java</p>
+            </div>
+            <div class="skill">
+                <img src="images/skills/c++.png" alt="C++">
+                <p>C++</p>
+            </div>
+            <div class="skill">
+                <img src="images/contact/github.png" alt="GitHub">
+                <p>GitHub</p>
+            </div>
+            <div class="skill">
+                <img src="images/skills/vscode.png" alt="VS Code">
+                <p>VS Code</p>
+            </div>
+            <!-- Add more skills below if you have them -->
+        </div>
+    </section>
+    
+    <section id="projects" class="fade-in">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Web Development</h3>
+            <p>This project involved creating a responsive website using HTML, CSS, and JavaScript.
+                It showcases my understanding of front-end development and design principles.</p>
+            <a href="javascript:void(0);" onclick="toggleDetails('project1-details')">Learn more</a>
+            <div id="project1-details" class="project-details">
+                <p>This project was one of my first hands-on experiences building a website from scratch. 
+                    I used HTML to create the structure of the pages, CSS to design and style the layout, and JavaScript to add interactive features.
+                    The goal was to make a simple and clean website that works well on both computers and phones.
+                    I learned how to organize content clearly and how to style it so it looks modern and easy to read. 
+                </p>
+                <p>
+                    I also focused on improving user experience by adding smooth scrolling, hover effects, and a fixed navigation bar. 
+                    Later, I added animations that make different parts of the website fade in as the user scrolls down. 
+                    These small features helped me understand how websites can feel more alive and engaging. 
+                    This project helped me get more comfortable with writing code and seeing real results in the browser.
+                </p>
+            </div>
+            <!-- <a href="project1.html" target="_blank">Learn more</a>-->
+        </div>
+
+        <div class="project">
+            <h3>Connect Bridge - Hackathon Project</h3>
+            <p>This website was built during the Spring 2025 LaGuardia Hackathon. 
+                It helps students connect with career services, mentors, and workshops. 
+                The front-end was built using HTML, CSS, and JavaScript with a focus on user experience for international and local students alike.
+            </p>
+
+            <a href="https://connectbridge.netlify.app" target="_blank">🌐 View Live Site</a> |
+            <a href="javascript:void(0);" onclick="toggleDetails('project2-details')">Learn more</a>
+            <div id="project2-details" class="project-details">
+                <p>
+                    Career Connect was developed by a four-member student team as part of the Spring 2025 Hackathon at LaGuardia Community College. 
+                    The platform is designed to help students especially international students find internships, mentors, and relevant campus resources more easily.
+                </p>
+                <p>
+                    Our project includes features like major and skill-based internship filtering, links to external job platforms, and an email contact system for organizations.
+                    We focused on accessibility, clean navigation, and mobile responsiveness to ensure the tool is practical for all students.
+                    This was a collaborative experience where we divided tasks by frontend, backend, content, and UI/UX design. 
+                    It deepened my understanding of teamwork in web development.
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>AI Chatbot</h3>
+            <p>In this project, I built a simple AI chatbot using Python and machine learning libraries, 
+                focusing on natural language processing and user interaction.</p>
+            <a href="javascript:void(0);" onclick="toggleDetails('project3-details')">Learn more</a>
+            <div id="project3-details" class="project-details">
+                <p>This project is my introduction to artificial intelligence and natural language processing. 
+                    I’m building a basic chatbot using Python and a library called NLTK (Natural Language Toolkit). 
+                    The chatbot can understand simple questions and reply based on patterns I trained it to recognize. 
+                    I wrote code to process what the user types, break the message into smaller parts (called tokenization), and find a response that matches. 
+                    This helped me understand how machines can read and respond to human language.
+                </p>
+                <p>
+                    The project is still in progress. 
+                    I plan to keep improving it by adding better responses, expanding the topics it can understand, and making the conversation flow more naturally. 
+                    I also want to try connecting it to a simple website so users can chat through a browser. 
+                    So far, it has been a fun way to learn about AI, and I’m excited to keep working on it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <h2>Contact</h2>
+        <div class="contact-icons">
+            <a href="mailto:gaurab.pun24@gmail.com" target="_blank">
+                <img src="images/contact/email.jpg" alt="Email">
+                <p>Email</p>
+            </a>
+            <a href="https://www.linkedin.com/in/gaurab-pun" target="_blank">
+                <img src="images/contact/linkedin.webp" alt="LinkedIn">
+                <p>LinkedIn</p>
+            </a>
+            <a href="https://github.com/Gaurabpun" target="_blank">
+                <img src="images/contact/github.png" alt="GitHub">
+                <p>GitHub</p>
+            </a>
+            <a href="https://www.instagram.com/__gaurab.pun__" target="_blank">
+                <img src="images/contact/instagram.webp" alt="Instagram">
+                <p>Instagram</p>
+            </a>
+        </div>
+    </section>    
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Gaurab Pun. All rights reserved.</p>
+    </footer>
+
+    <!-- Chatbot Button -->
+<button id="chatbot-btn">💬</button>
+
+<!-- Chatbot Window -->
+<div id="chatbot-window">
+  <div id="chatbot-messages"></div>
+  <div id="chatbot-input">
+    <input type="text" id="chat-input" placeholder="Ask me anything..." />
+    <button id="chat-send-btn">➤</button>
+  </div>
+</div>
+
+<script src="script.js" defer></script> <!-- make sure this line is here or add it -->
+
+</body>
+</html>
