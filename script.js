@@ -35,25 +35,27 @@ async function sendMessage() {
   chatInput.value = '';
   addMessage('Typing...', 'bot');
 
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+  try {
+  const response = await fetch("https://gpt-chatbot-backend-c8zs.onrender.com/chat", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${API_KEY}`,
     },
     body: JSON.stringify({
-      model: "gpt-3.5-turbo",
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: userMessage },
-      ],
+      message: `${SYSTEM_PROMPT}\n\nUser: ${userMessage}`,
     }),
   });
 
   const data = await response.json();
-  const botReply = data.choices?.[0]?.message?.content || "Sorry, something went wrong.";
+  const botReply = data.reply || "Sorry, something went wrong.";
   removeLastBotMessage();
   addMessage(botReply, 'bot');
+
+} catch (error) {
+  console.error("Error:", error);
+  removeLastBotMessage();
+  addMessage("Sorry, the server is not responding.", 'bot');
+}
 }
 
 function addMessage(text, sender) {
