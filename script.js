@@ -24,8 +24,19 @@ GitHub and LinkedIn links are available on the website.
 `;
 
 chatbotBtn.onclick = () => {
-  chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+  const isOpen = chatbotWindow.style.display === 'flex';
+  chatbotWindow.style.display = isOpen ? 'none' : 'flex';
+
+  if (!isOpen) {
+    setTimeout(() => chatInput.focus(), 100);
+
+    // ✅ Add welcome message only if chat is empty
+    if (chatMessages.innerHTML.trim() === '') {
+      addMessage("Hello! I'm here to help you with any questions about Gaurab Pun's portfolio.", 'bot');
+    }
+  }
 };
+
 
 async function sendMessage() {
   const userMessage = chatInput.value.trim();
@@ -33,7 +44,12 @@ async function sendMessage() {
 
   addMessage(userMessage, 'user');
   chatInput.value = '';
-  addMessage('Typing...', 'bot');
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'message bot typing';
+  typingDiv.innerHTML = '<span></span><span></span><span></span>';
+  chatMessages.appendChild(typingDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
 
   try {
   const response = await fetch("https://gpt-chatbot-backend-c8zs.onrender.com/chat", {
@@ -61,16 +77,15 @@ async function sendMessage() {
 function addMessage(text, sender) {
   const msg = document.createElement('div');
   msg.className = `message ${sender}`;
-  msg.textContent = text;
+  const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  msg.innerHTML = `<div>${text}</div><small style="display:block; color:#999;">${time}</small>`;
   chatMessages.appendChild(msg);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 function removeLastBotMessage() {
-  const messages = chatMessages.querySelectorAll('.message.bot');
-  if (messages.length > 0) {
-    messages[messages.length - 1].remove();
-  }
+  const typing = chatMessages.querySelector('.typing');
+  if (typing) typing.remove();
 }
 
 const sendBtn = document.getElementById('chat-send-btn');
