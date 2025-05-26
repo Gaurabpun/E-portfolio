@@ -99,7 +99,7 @@ chatInput.addEventListener('keypress', function (e) {
 });
 
 document.addEventListener("scroll", function() {
-  var header = document.querySelector("header");
+  const header = document.querySelector("header");
   if (window.pageYOffset > 50) { // Checks if the page is scrolled down 100 pixels or more
       header.classList.add("minimized");
   } else {
@@ -111,16 +111,6 @@ function toggleDetails(id) {
   const element = document.getElementById(id);
   element.classList.toggle('open');
 }
-
-// scroll header shrink
-document.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  if (window.pageYOffset > 50) {
-    header.classList.add("minimized");
-  } else {
-    header.classList.remove("minimized");
-  }
-});
 
 // === Fade-in on scroll ===
 const fadeElements = document.querySelectorAll('.fade-in');
