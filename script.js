@@ -125,3 +125,12 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 fadeElements.forEach(el => observer.observe(el));
+
+// Toggle Chatbot Visibility
+document.getElementById("chatbot-btn").addEventListener("click", function () {
+    document.getElementById("chatbot-window").style.display = "flex";
+});
+
+document.getElementById("chatbot-close-btn").addEventListener("click", function () {
+    document.getElementById("chatbot-window").style.display = "none";
+});

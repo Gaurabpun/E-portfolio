@@ -350,3 +350,75 @@ footer p {
   background-color: #f0f0f0;
   text-align: left;
 }
+
+/* Chatbot window styling */
+#chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    height: 360px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Chatbot header styling */
+#chatbot-header {
+    background-color: #1e40af; /* blue like the send button */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Close button in header */
+#chatbot-close-btn {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: white;
+}
+
+#chatbot-close-btn:hover {
+    color: #ffcccc;
+}
+
+/* Chat message area */
+#chatbot-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* Chat input area */
+#chatbot-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#chat-send-btn {
+    background-color: #1e40af;
+    color: white;
+    border: none;
+    padding: 0 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
