@@ -463,3 +463,73 @@ footer p {
         max-width: 1100px;
     }
 }
+
+
+
+
+/* ===== Experience Section (LinkedIn-style) ===== /
+#experience.fade-in { scroll-margin-top: 130px; text-align: left; }
+
+.company-group { margin: 2rem 0; }
+
+.company-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.company-logo {
+  width: 48px; height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #f3f4f6;
+}
+
+.company-name { font-size: 1.2rem; font-weight: 600; color: #111827; }
+.company-meta { color: #6b7280; }
+.company-tenure { color: #374151; font-size: 0.9rem; }
+
+.roles {
+  position: relative;
+  margin-left: 24px;
+  padding-left: 24px;
+  border-left: 2px solid #e5e7eb;
+}
+
+.role { position: relative; margin: 1.5rem 0; }
+
+.dot {
+  width: 12px; height: 12px;
+  border-radius: 9999px;
+  background: #1e40af;
+  position: absolute; left: -32px; top: 12px;
+}
+
+.card {
+  background: #fff; padding: 14px 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.role-title { font-size: 1.05rem; font-weight: 600; color: #111827; }
+.role-meta { font-size: 0.9rem; color: #6b7280; }
+.role-dates { font-size: 0.9rem; color: #374151; margin-bottom: 8px; }
+
+.role-bullets { padding-left: 18px; color: #374151; }
+.role-bullets li { margin: 6px 0; }
+
+.role-desc {
+  max-height: 80px; overflow: hidden; position: relative;
+}
+.role-desc::after {
+  content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 30px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+}
+.role-desc.open { max-height: none; }
+.role-desc.open::after { display: none; }
+
+.see-more {
+  border: none; background: transparent;
+  color: #1e40af; font-weight: 600;
+  cursor: pointer; padding: 4px 0;
+}
+*/

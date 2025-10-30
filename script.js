@@ -7,6 +7,40 @@ const chatbotWindow = document.getElementById('chatbot-window');
 const chatMessages = document.getElementById('chatbot-messages');
 const chatInput = document.getElementById('chat-input');
 
+// --- Chatbot open/close helpers (added safely) ---
+function openChatbot() {
+  chatbotWindow.style.display = 'flex';
+  setTimeout(() => chatInput?.focus(), 100);
+
+  // Add welcome message only if chat is empty
+  if (chatMessages.innerHTML.trim() === '') {
+    addMessage("Hello! I'm here to help you with any questions about Gaurab Pun's portfolio.", 'bot');
+  }
+}
+
+function closeChatbot() {
+  chatbotWindow.style.display = 'none';
+}
+
+// When clicking the floating 💬 bubble
+chatbotBtn.onclick = () => {
+  const isOpen = chatbotWindow.style.display === 'flex';
+  isOpen ? closeChatbot() : openChatbot();
+};
+
+// When clicking the ✕ button
+document.getElementById('chatbot-close-btn')
+  .addEventListener('click', closeChatbot);
+
+// When clicking the "🌐 Live Demo" link
+const openDemoLink = document.getElementById('open-chatbot-demo');
+if (openDemoLink) {
+  openDemoLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    openChatbot();
+  });
+}
+
 const SYSTEM_PROMPT = `
 You are an AI assistant for Gaurab Pun's portfolio website.
 Use this information to answer questions:
@@ -23,21 +57,6 @@ Email: gaurab.pun24@gmail.com
 GitHub and LinkedIn links are available on the website.
 `;
 
-chatbotBtn.onclick = () => {
-  const isOpen = chatbotWindow.style.display === 'flex';
-  chatbotWindow.style.display = isOpen ? 'none' : 'flex';
-
-  if (!isOpen) {
-    setTimeout(() => chatInput.focus(), 100);
-
-    // ✅ Add welcome message only if chat is empty
-    if (chatMessages.innerHTML.trim() === '') {
-      addMessage("Hello! I'm here to help you with any questions about Gaurab Pun's portfolio.", 'bot');
-    }
-  }
-};
-
-
 async function sendMessage() {
   const userMessage = chatInput.value.trim();
   if (!userMessage) return;
@@ -49,7 +68,6 @@ async function sendMessage() {
   typingDiv.innerHTML = '<span></span><span></span><span></span>';
   chatMessages.appendChild(typingDiv);
   chatMessages.scrollTop = chatMessages.scrollHeight;
-
 
   try {
   const response = await fetch("https://gpt-chatbot-backend-c8zs.onrender.com/chat", {
@@ -126,11 +144,11 @@ const observer = new IntersectionObserver(entries => {
 
 fadeElements.forEach(el => observer.observe(el));
 
-// Toggle Chatbot Visibility
-document.getElementById("chatbot-btn").addEventListener("click", function () {
-    document.getElementById("chatbot-window").style.display = "flex";
-});
 
-document.getElementById("chatbot-close-btn").addEventListener("click", function () {
-    document.getElementById("chatbot-window").style.display = "none";
-});
+
+// function toggleExp(id, btn) {
+//   const el = document.getElementById(id);
+//   if (!el) return;
+//   el.classList.toggle('open');
+//   btn.textContent = el.classList.contains('open') ? 'see less' : '…see more';
+// }

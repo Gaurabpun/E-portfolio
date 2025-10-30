@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My e-portfolio</title>
     <link rel="stylesheet" href="style.css">
-    
-   <!-- Google tag (gtag.js) -->
+
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SV9448QK9"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    gtag('config', 'G-0SV9448QK9');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0SV9448QK9');
     </script>
 </head>
 
@@ -24,6 +25,9 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+
+                <!-- <li><a href="#experience">Experience</a></li> -->
+
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -33,7 +37,9 @@
     <section id="about" class="fade-in">
         <h2>About Me</h2>
         <img src="images/profile/profilePic1.jpeg" alt="Gaurab Pun" class="profile-pic">
-        <p>Hi, I'm Gaurab Pun, a passionate Computer Science student. I'm interested in software development, web technologies, and AI. I'm continuously looking for opportunities to enhance my skills and work on exciting projects!</p>
+        <p>Hi, I'm Gaurab Pun, a passionate Computer Science student. I'm interested in software development, web
+            technologies, and AI. I'm continuously looking for opportunities to enhance my skills and work on exciting
+            projects!</p>
     </section>
 
     <section id="skills" class="fade-in">
@@ -66,7 +72,102 @@
             <!-- More skills below when I will have them -->
         </div>
     </section>
+
+
+<!--
+    <section id="experience" class="fade-in">
+        <h2>Experience</h2>
+
+        <-- Company Group 1 ->
+        <div class="company-group">
+            <div class="company-header">
+                <img src="images/skills/git.png" alt="LaGuardia Community College" class="company-logo"
+                    onerror="this.style.display='none'">
+                <div>
+                    <div class="company-name">LaGuardia Community College</div>
+                    <div class="company-meta">Queens, NY · On-site</div>
+                    <div class="company-tenure">1 yr</div>
+                </div>
+            </div>
+
+            <div class="roles">
+                <article class="role">
+                    <div class="dot"></div>
+                    <div class="card">
+                        <div class="role-title">Academic Peer Instructor (Mathematics)</div>
+                        <div class="role-meta">Part-time</div>
+                        <div class="role-dates">Sep 2024 – Present · 1 yr</div>
+                        <ul class="role-bullets role-desc" id="lagcc-role-1">
+                            <li>Facilitate out-of-class tutoring sessions for Algebra, Pre-Calculus, Calculus I & II.
+                            </li>
+                            <li>Promote independent learning through problem-solving and strategies.</li>
+                        </ul>
+                        <button class="see-more" onclick="toggleExp('lagcc-role-1', this)">…see more</button>
+                    </div>
+                </article>
+
+                <article class="role">
+                    <div class="dot"></div>
+                    <div class="card">
+                        <div class="role-title">QSTEM Research Scholar</div>
+                        <div class="role-meta">Internship</div>
+                        <div class="role-dates">Jun 2025 – Aug 2025 · 3 mos</div>
+                        <ul class="role-bullets role-desc" id="lagcc-role-2">
+                            <li>Conducted observation, data collection, and analysis in astronomy project.</li>
+                            <li>Presented findings to faculty and peers.</li>
+                        </ul>
+                        <button class="see-more" onclick="toggleExp('lagcc-role-2', this)">…see more</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Company Group 2 ->
+        <div class="company-group">
+            <div class="company-header">
+                <img src="images/companies/orbitalkitchens.png" alt="Orbital Kitchens" class="company-logo"
+                    onerror="this.style.display='none'">
+                <div>
+                    <div class="company-name">Orbital Kitchens</div>
+                    <div class="company-meta">Queens, NY · On-site</div>
+                    <div class="company-tenure">2 yrs+</div>
+                </div>
+            </div>
+
+            <div class="roles">
+                <article class="role">
+                    <div class="dot"></div>
+                    <div class="card">
+                        <div class="role-title">Dispatcher</div>
+                        <div class="role-meta">Part-time</div>
+                        <div class="role-dates">Jun 2025 – Present</div>
+                        <ul class="role-bullets role-desc" id="orbital-role-1">
+                            <li>Coordinated deliveries and monitored average delivery times.</li>
+                            <li>Assigned orders to drivers and managed batching for efficiency.</li>
+                        </ul>
+                        <button class="see-more" onclick="toggleExp('orbital-role-1', this)">…see more</button>
+                    </div>
+                </article>
+
+                <article class="role">
+                    <div class="dot"></div>
+                    <div class="card">
+                        <div class="role-title">Expeditor</div>
+                        <div class="role-dates">Mar 2023 – May 2025 · 2 yrs 3 mos</div>
+                        <ul class="role-bullets role-desc" id="orbital-role-2">
+                            <li>Streamlined kitchen-to-driver order flow.</li>
+                            <li>Verified packaging accuracy before dispatch.</li>
+                        </ul>
+                        <button class="see-more" onclick="toggleExp('orbital-role-2', this)">…see more</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
     
+    -->
+
+
     <section id="projects" class="fade-in">
         <h2>Projects</h2>
         <div class="project">
@@ -75,16 +176,19 @@
                 It showcases my understanding of front-end development and design principles.</p>
             <a href="javascript:void(0);" onclick="toggleDetails('project1-details')">Learn more</a>
             <div id="project1-details" class="project-details">
-                <p>This project was one of my first hands-on experiences building a website from scratch. 
-                    I used HTML to create the structure of the pages, CSS to design and style the layout, and JavaScript to add interactive features.
+                <p>This project was one of my first hands-on experiences building a website from scratch.
+                    I used HTML to create the structure of the pages, CSS to design and style the layout, and JavaScript
+                    to add interactive features.
                     The goal was to make a simple and clean website that works well on both computers and phones.
-                    I learned how to organize content clearly and how to style it so it looks modern and easy to read. 
+                    I learned how to organize content clearly and how to style it so it looks modern and easy to read.
                 </p>
                 <p>
-                    I also focused on improving user experience by adding smooth scrolling, hover effects, and a fixed navigation bar. 
-                    Later, I added animations that make different parts of the website fade in as the user scrolls down. 
-                    These small features helped me understand how websites can feel more alive and engaging. 
-                    This project helped me get more comfortable with writing code and seeing real results in the browser.
+                    I also focused on improving user experience by adding smooth scrolling, hover effects, and a fixed
+                    navigation bar.
+                    Later, I added animations that make different parts of the website fade in as the user scrolls down.
+                    These small features helped me understand how websites can feel more alive and engaging.
+                    This project helped me get more comfortable with writing code and seeing real results in the
+                    browser.
                 </p>
             </div>
             <!-- <a href="project1.html" target="_blank">Learn more</a>-->
@@ -92,22 +196,28 @@
 
         <div class="project">
             <h3>Connect Bridge - Hackathon Project</h3>
-            <p>This website was built during the Spring 2025 LaGuardia Hackathon. 
-                It helps students connect with career services, mentors, and workshops. 
-                The front-end was built using HTML, CSS, and JavaScript with a focus on user experience for international and local students alike.
+            <p>This website was built during the Spring 2025 LaGuardia Hackathon.
+                It helps students connect with career services, mentors, and workshops.
+                The front-end was built using HTML, CSS, and JavaScript with a focus on user experience for
+                international and local students alike.
             </p>
 
             <a href="https://connectbridge.netlify.app" target="_blank">🌐 View Live Site</a>
             <a href="javascript:void(0);" onclick="toggleDetails('project2-details')">Learn more</a>
             <div id="project2-details" class="project-details">
                 <p>
-                    Career Connect was developed by a four-member student team as part of the Spring 2025 Hackathon at LaGuardia Community College. 
-                    The platform is designed to help students especially international students find internships, mentors, and relevant campus resources more easily.
+                    Career Connect was developed by a four-member student team as part of the Spring 2025 Hackathon at
+                    LaGuardia Community College.
+                    The platform is designed to help students especially international students find internships,
+                    mentors, and relevant campus resources more easily.
                 </p>
                 <p>
-                    Our project includes features like major and skill-based internship filtering, links to external job platforms, and an email contact system for organizations.
-                    We focused on accessibility, clean navigation, and mobile responsiveness to ensure the tool is practical for all students.
-                    This was a collaborative experience where we divided tasks by frontend, backend, content, and UI/UX design. 
+                    Our project includes features like major and skill-based internship filtering, links to external job
+                    platforms, and an email contact system for organizations.
+                    We focused on accessibility, clean navigation, and mobile responsiveness to ensure the tool is
+                    practical for all students.
+                    This was a collaborative experience where we divided tasks by frontend, backend, content, and UI/UX
+                    design.
                     It deepened my understanding of teamwork in web development.
                 </p>
             </div>
@@ -115,20 +225,24 @@
 
         <div class="project">
             <h3>AI Chatbot</h3>
-            <p>In this project, I built a simple AI chatbot using Python and machine learning libraries, 
-                focusing on natural language processing and user interaction.</p>
+            <p>In this project, I built a simple AI chatbot using Python and machine learning libraries,
+                focusing on natural language processing and user interaction.
+            </p>
+            <a href="#" id="open-chatbot-demo">🌐 Live Demo</a>
             <a href="javascript:void(0);" onclick="toggleDetails('project3-details')">Learn more</a>
             <div id="project3-details" class="project-details">
-                <p>This project is my introduction to artificial intelligence and natural language processing. 
-                    I’m building a basic chatbot using Python and a library called NLTK (Natural Language Toolkit). 
-                    The chatbot can understand simple questions and reply based on patterns I trained it to recognize. 
-                    I wrote code to process what the user types, break the message into smaller parts (called tokenization), and find a response that matches. 
+                <p>This project is my introduction to artificial intelligence and natural language processing.
+                    I’m building a basic chatbot using Python and a library called NLTK (Natural Language Toolkit).
+                    The chatbot can understand simple questions and reply based on patterns I trained it to recognize.
+                    I wrote code to process what the user types, break the message into smaller parts (called
+                    tokenization), and find a response that matches.
                     This helped me understand how machines can read and respond to human language.
                 </p>
                 <p>
-                    The project is still in progress. 
-                    I plan to keep improving it by adding better responses, expanding the topics it can understand, and making the conversation flow more naturally. 
-                    I also want to try connecting it to a simple website so users can chat through a browser. 
+                    The project is still in progress.
+                    I plan to keep improving it by adding better responses, expanding the topics it can understand, and
+                    making the conversation flow more naturally.
+                    I also want to try connecting it to a simple website so users can chat through a browser.
                     So far, it has been a fun way to learn about AI, and I’m excited to keep working on it.
                 </p>
             </div>
@@ -155,29 +269,30 @@
                 <p>Instagram</p>
             </a>
         </div>
-    </section>    
+    </section>
 
     <footer>
         <p>&copy; <span id="currentYear"></span> Gaurab Pun. All rights reserved.</p>
     </footer>
 
     <!-- Chatbot Button -->
-<button id="chatbot-btn">💬</button>
+    <button id="chatbot-btn">💬</button>
 
-<!-- Chatbot Window -->
-<div id="chatbot-window">
-  <div id="chatbot-header">
-    Gaurab's Assistant
-    <span id="chatbot-close-btn">✕</span> <!-- Add this line -->
-  </div>
-  <div id="chatbot-messages"></div>
-  <div id="chatbot-input">
-    <input type="text" id="chat-input" placeholder="Ask me anything..." />
-    <button id="chat-send-btn">➤</button>
-  </div>
-</div>
+    <!-- Chatbot Window -->
+    <div id="chatbot-window">
+        <div id="chatbot-header">
+            Gaurab's Assistant
+            <span id="chatbot-close-btn">✕</span> <!-- Add this line -->
+        </div>
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-input">
+            <input type="text" id="chat-input" placeholder="Ask me anything..." />
+            <button id="chat-send-btn">➤</button>
+        </div>
+    </div>
 
-<script src="script.js" defer></script> <!-- make sure this line is here or add it -->
+    <script src="script.js" defer></script> <!-- make sure this line is here or add it -->
 
 </body>
+
 </html>
