@@ -152,3 +152,4 @@ fadeElements.forEach(el => observer.observe(el));
 //   el.classList.toggle('open');
 //   btn.textContent = el.classList.contains('open') ? 'see less' : '…see more';
 // }
+//
